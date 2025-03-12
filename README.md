@@ -1,6 +1,6 @@
 # Local-Live-Translator
 
-A powerful real-time speech translation application that captures audio, transcribes speech in multiple languages, and provides instantaneous translations with high accuracy - all running locally on your machine.
+A powerful real-time speech translation application that captures audio, transcribes speech in multiple languages and provides instantaneous translations with high accuracy - all running locally on your machine.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Python: 3.9+](https://img.shields.io/badge/Python-3.9+-blue.svg)
@@ -59,9 +59,9 @@ The application currently supports the following languages:
 
 ## 🖥️ System Requirements
 
-- **Python**: 3.7+
+- **Python**: 3.9+
 - **GPU**: CUDA-compatible GPU recommended for optimal performance
-- **Memory**: 8GB+ RAM recommended
+- **Memory**: 16GB+ RAM recommended, 8GB RAM minimum
 - **Disk Space**: At least 10GB free space for model files
 - **Browser**: Modern browser with WebRTC support
 - **Network**: Stable internet connection
