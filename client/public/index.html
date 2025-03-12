@@ -1,0 +1,132 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-time Translation</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Real-time Translation</h1>
+        
+        <!-- 언어 선택 컨트롤 -->
+        <div class="language-controls">
+            <div class="language-selector">
+                <label for="sourceLanguage">음성 인식 언어:</label>
+                <select id="sourceLanguage">
+                    <option value="auto" selected>자동 감지</option>
+                    <option value="eng_Latn">영어 (English)</option>
+                    <option value="kor_Hang">한국어 (Korean)</option>
+                    <option value="jpn_Jpan">일본어 (Japanese)</option>
+                    <option value="cmn_Hans">중국어 간체 (Chinese Simplified)</option>
+                    <option value="deu_Latn">독일어 (German)</option>
+                    <option value="fra_Latn">프랑스어 (French)</option>
+                    <option value="spa_Latn">스페인어 (Spanish)</option>
+                </select>
+            </div>
+            
+            <div class="language-direction">
+                <span class="direction-arrow">→</span>
+            </div>
+            
+            <div class="language-selector">
+                <label for="targetLanguage">번역 언어:</label>
+                <select id="targetLanguage">
+                    <option value="kor_Hang" selected>한국어 (Korean)</option>
+                    <option value="eng_Latn">영어 (English)</option>
+                    <option value="jpn_Jpan">일본어 (Japanese)</option>
+                    <option value="cmn_Hans">중국어 간체 (Chinese Simplified)</option>
+                    <option value="deu_Latn">독일어 (German)</option>
+                    <option value="fra_Latn">프랑스어 (French)</option>
+                    <option value="spa_Latn">스페인어 (Spanish)</option>
+                </select>
+            </div>
+            
+            <div class="language-auto-detect">
+                <input type="checkbox" id="autoDetectToggle" checked>
+                <label for="autoDetectToggle">자동 감지 활성화</label>
+                <span id="detectedLanguage" class="detected-language">감지된 언어: -</span>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="startButton">Start</button>
+            <button id="stopButton" disabled>Stop</button>
+        </div>
+
+        <!-- 오디오 시각화 컨테이너 -->
+        <div class="audio-visualization">
+            <div class="audio-level-container">
+                <div class="audio-level-label">마이크 입력 레벨</div>
+                <div class="audio-meter">
+                    <div id="audioLevelBar" class="audio-level"></div>
+                </div>
+            </div>
+            
+            <div class="spectrum-container">
+                <canvas id="audioSpectrum" width="800" height="100"></canvas>
+            </div>
+            
+            <div class="voice-activity-container">
+                <div id="voiceActivityIndicator" class="voice-activity-indicator">
+                    <span class="indicator-dot"></span>
+                    <span class="indicator-text">무음 상태</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 번역 결과 컨테이너 -->
+        <div class="translation-container">
+            <div class="transcription-box">
+                <h2>원본 텍스트</h2>
+                <div id="transcriptionResult"></div>
+            </div>
+            <div class="translation-box">
+                <h2>번역 텍스트</h2>
+                <div id="translationResult"></div>
+            </div>
+        </div>
+        
+        <!-- 내보내기 컨트롤 추가 -->
+        <div class="export-controls">
+            <h3>번역 결과 내보내기</h3>
+            <div class="export-options">
+                <div class="export-option">
+                    <input type="checkbox" id="exportOriginal" checked>
+                    <label for="exportOriginal">원본 텍스트 포함</label>
+                </div>
+                <div class="export-option">
+                    <input type="checkbox" id="exportTranslation" checked>
+                    <label for="exportTranslation">번역 텍스트 포함</label>
+                </div>
+                <div class="export-option">
+                    <input type="checkbox" id="exportTimestamp" checked>
+                    <label for="exportTimestamp">시간 정보 포함</label>
+                </div>
+                <div class="export-option">
+                    <input type="checkbox" id="exportLanguageInfo">
+                    <label for="exportLanguageInfo">언어 정보 포함</label>
+                </div>
+            </div>
+            <div class="export-buttons">
+                <button id="exportText" class="export-button">텍스트 파일 (.txt)</button>
+                <button id="exportWord" class="export-button">Word 문서 (.docx)</button>
+                <button id="exportPDF" class="export-button">PDF 문서 (.pdf)</button>
+                <button id="exportHTML" class="export-button">HTML 페이지 (.html)</button>
+                <button id="copyToClipboard" class="export-button">클립보드에 복사</button>
+            </div>
+        </div>
+        
+        <div id="logContainer" class="log-container"></div>
+    </div>
+
+    <!-- 추가 스크립트 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.7.0/docx.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="/src/index.js"></script>
+    <!-- 전역 상태 표시를 위한 요소 추가 (HTML 하단에) -->
+    <div id="globalStatus" class="global-status"></div>
+</body>
+</html>
