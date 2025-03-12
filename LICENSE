@@ -1,6 +1,4 @@
-# License
-
-## Project Code License (MIT)
+MIT License
 
 Copyright (c) 2025 SkyFever
 
@@ -22,34 +20,34 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Usage Restrictions
+USAGE RESTRICTIONS
 
 This project uses NLLB-200 (No Language Left Behind) translation model from Meta AI which is licensed under the CC-BY-NC 4.0 (Creative Commons Attribution-NonCommercial 4.0 International) license. Therefore:
 
-1. **Non-Commercial Use Only**: This application may only be used for non-commercial purposes. Commercial use of this application, particularly the translation functionality powered by NLLB-200, is not permitted without obtaining a separate license from Meta AI.
+1. Non-Commercial Use Only: This application may only be used for non-commercial purposes. Commercial use of this application, particularly the translation functionality powered by NLLB-200, is not permitted without obtaining a separate license from Meta AI.
 
-2. **Attribution**: If you use this project in your work, please provide appropriate attribution to:
+2. Attribution: If you use this project in your work, please provide appropriate attribution to:
    - This project
-   - [OpenAI Whisper](https://github.com/openai/whisper)
-   - [Meta AI's NLLB-200](https://github.com/facebookresearch/fairseq/tree/nllb)
+   - OpenAI Whisper (https://github.com/openai/whisper)
+   - Meta AI's NLLB-200 (https://github.com/facebookresearch/fairseq/tree/nllb)
    - Other included open-source components
 
-## Third-Party Licenses
+THIRD-PARTY LICENSES
 
 This project incorporates several third-party open-source components, each with its own license:
 
-- **OpenAI Whisper**: MIT License
-- **Faster Whisper**: MIT License
-- **NLLB-200**: CC-BY-NC 4.0 License
-- **Flask**: BSD License
-- **Socket.IO**: MIT License
-- **LangDetect**: Apache License 2.0
-- **Transformers (Hugging Face)**: Apache License 2.0
-- **docx.js, jsPDF, FileSaver.js**: MIT License
+- OpenAI Whisper: MIT License
+- Faster Whisper: MIT License
+- NLLB-200: CC-BY-NC 4.0 License
+- Flask: BSD License
+- Socket.IO: MIT License
+- LangDetect: Apache License 2.0
+- Transformers (Hugging Face): Apache License 2.0
+- docx.js, jsPDF, FileSaver.js: MIT License
 
 Please refer to the respective projects for the full text of their licenses.
 
-## Commercial Use
+COMMERCIAL USE
 
 For commercial use of this application, you would need to:
 
