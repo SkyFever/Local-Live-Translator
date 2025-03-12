@@ -1,0 +1,14 @@
+flask
+flask-socketio
+faster-whisper
+python-dotenv
+numpy
+webrtcvad
+sacremoses
+eventlet
+pydub
+transformers
+fasttext
+sentencepiece # Required for some Hugging Face models
+torch>=2.0.0 # Install PyTorch (CPU or GPU version as needed)
+--extra-index-url https://download.pytorch.org/whl/cu124 # Use this URL for CUDA 12.4
